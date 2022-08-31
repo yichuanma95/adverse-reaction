@@ -89,5 +89,9 @@ def load_data(data_folder):
                 obj['reactions'] = reactions[id]
             reports.append(obj)
 
+            # limit data to 1000 documents
+            if len(reports) == 1000:
+                break
+
     for report in reports:
         yield report
