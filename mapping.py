@@ -5,10 +5,12 @@ def get_custom_mapping(cls):
             "type": "keyword"
         },
         "latest_date_received": {
-            "type": "date"
+            "normalizer": "keyword_lowercase_normalizer",
+            "type": "keyword"
         },
         "initial_date_received": {
-            "type": "date"
+            "normalizer": "keyword_lowercase_normalizer",
+            "type": "keyword"
         },
         "mah_no": {
             "normalizer": "keyword_lowercase_normalizer",
