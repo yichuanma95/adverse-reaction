@@ -64,6 +64,10 @@ def load_data(data_folder):
             for i in range(len(datapoint)):
                 datapoint[i] = datapoint[i].strip('\"')
             obj = {col: d for col, d in zip(reportcols, datapoint)}
+            if obj['latest_date_received'] == '' or obj['initial_date_received'] == '' or obj['seriousness_en'] == ''\
+                or obj['source_en'] == '' or obj['gender_en'] == '' or obj['outcome_en'] == '' or obj['age'] == ''\
+                    or obj['age_yrs'] == '':
+                continue
             id = obj.pop('report_id')
             del obj['report_type_code']
             del obj['report_type_fr']
