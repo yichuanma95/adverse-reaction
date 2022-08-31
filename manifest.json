@@ -1,0 +1,17 @@
+{
+  "version": "0.2",
+  "__metadata__": {
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "licence": "CC BY 4.0",
+    "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-database.html"
+  },
+  "dumper": {
+    "data_url": ["https://www.canada.ca/content/dam/hc-sc/migration/hc-sc/dhp-mps/alt_formats/zip/medeff/databasdon/extract_extrait.zip"],
+    "uncompress": false,
+    "release": "version:get_release"
+  },
+  "uploader": {
+    "parser": "parser:load_data",
+    "on_duplicates": "ignore"
+  }
+}
