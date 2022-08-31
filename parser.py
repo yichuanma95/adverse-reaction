@@ -86,5 +86,4 @@ def load_data(data_folder):
             reports.append(obj)
 
         for report in reports:
-            yield(report)
-            
+            yield report
