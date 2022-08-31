@@ -23,7 +23,7 @@ def get_custom_mapping(cls):
             "type": "keyword"
         },
         "age": {
-            "type": "integer"
+            "type": "float"
         },
         "age_yrs": {
             "type": "float"
