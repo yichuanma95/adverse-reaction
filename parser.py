@@ -42,8 +42,6 @@ def load_data(data_folder):
             del obj['reporter_type_fr']
             del obj['source_code']
             del obj['source_fr']
-            obj['latest_date_received'] = datetime.datetime.strptime(obj['latest_date_received'], '%d-%b-%y')
-            obj['initial_date_received'] = datetime.datetime.strptime(obj['initial_date_received'], '%d-%b-%y')
             obj['age'] = int(obj['age'])
             obj['age_yrs'] = float(obj['age_yrs'])
             obj['drugs'] = []
