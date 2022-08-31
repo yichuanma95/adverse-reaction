@@ -57,6 +57,7 @@ def load_data(data_folder):
          'death', 'disability', 'congenital_anomaly', 'life_threatening', 'hosp_required', 'other_medically_imp_cond',
          'reporter_type_en', 'reporter_type_fr', 'source_code', 'source_en', 'source_fr', 'e2b_safetyreport_id',
          'authority_num', 'company_num']
+    reports = []
     with open_anyfile((zipfile, reportfile)) as f:
         for line in f:
             datapoint = line.rstrip('\n').split('$')
@@ -82,4 +83,8 @@ def load_data(data_folder):
                 obj['drugs'] = drug_reports[id]
             if id in reactions:
                 obj['reactions'] = reactions[id]
-            yield obj
+            reports.append(obj)
+
+        for report in reports:
+            yield(report)
+            
