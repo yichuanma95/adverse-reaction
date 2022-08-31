@@ -21,6 +21,13 @@ def load_data(data_folder):
             obj = {col: d for col, d in zip(drugcols, datapoint)}
             del obj['report_drug_id']
             id = obj.pop('report_id')
+            del obj['drug_role_fr']
+            del obj['route_admin_fr']
+            del obj['dose_unit_fr']
+            del obj['freq_time_fr']
+            del obj['freq_unit_fr']
+            del obj['therapy_dur_unit_fr']
+            del obj['dosage_form_fr']
             drug_reports.setdefault(id, []).append(obj)
 
     reactionfile = os.path.join('cvponline_extract_20220430', 'reactions.txt')
@@ -36,6 +43,9 @@ def load_data(data_folder):
             obj = {col: d for col, d in zip(reactioncols, datapoint)}
             del obj['reaction_id']
             id = obj.pop('report_id')
+            del obj['duration_unit_fr']
+            del obj['reaction_term_fr']
+            del obj['soc_fr']
             reactions.setdefault(id, []).append(obj)
 
     reportfile = os.path.join('cvponline_extract_20220430', 'reports.txt')
@@ -54,6 +64,20 @@ def load_data(data_folder):
                 datapoint[i] = datapoint[i].strip('\"')
             obj = {col: d for col, d in zip(reportcols, datapoint)}
             id = obj.pop('report_id')
+            del obj['report_type_code']
+            del obj['report_type_fr']
+            del obj['gender_code']
+            del obj['gender_fr']
+            del obj['age_unit_fr']
+            del obj['outcome_code']
+            del obj['outcome_fr']
+            del obj['weight_unit_fr']
+            del obj['height_unit_fr']
+            del obj['seriousness_code']
+            del obj['seriousness_fr']
+            del obj['reporter_type_fr']
+            del obj['source_code']
+            del obj['source_fr']
             if id in drug_reports:
                 obj['drugs'] = drug_reports[id]
             if id in reactions:
