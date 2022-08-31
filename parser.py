@@ -49,8 +49,8 @@ def load_data(data_folder):
             reports[id] = obj
 
             # limit data to 1000 documents
-            if len(reports) == 1000:
-                break
+            # if len(reports) == 1000:
+            #     break
 
     drugfile = os.path.join('cvponline_extract_20220430', 'report_drug.txt')
     drugcols = \
