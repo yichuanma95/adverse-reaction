@@ -42,7 +42,7 @@ def load_data(data_folder):
             del obj['reporter_type_fr']
             del obj['source_code']
             del obj['source_fr']
-            obj['age'] = int(obj['age'])
+            obj['age'] = float(obj['age'])
             obj['age_yrs'] = float(obj['age_yrs'])
             obj['drugs'] = []
             obj['reactions'] = []
