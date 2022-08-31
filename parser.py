@@ -85,5 +85,5 @@ def load_data(data_folder):
                 obj['reactions'] = reactions[id]
             reports.append(obj)
 
-        for report in reports:
-            yield report
+    for report in reports:
+        yield report
